@@ -1,20 +1,19 @@
-import { useState } from "react";
+import { use, useState } from "react";
 
 const TodoApp = () => {
-  // TODO1: กำหนด Type ให้ state
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
+  const [todos, setTodos] = useState<string[]>([]);
+  const [input, setInput] = useState<string>("");
 
-  // TODO2: ใส่ type ให้ event
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
 
-  // TODO3: ใส่ type ให้ event
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (input.trim() ){
     setTodos([...todos, input]);
     setInput("");
+  }
   };
 
   return (
@@ -33,5 +32,4 @@ const TodoApp = () => {
   );
 };
 
-// TODO4: Render ออกมาใน App.tsx
 export default TodoApp;
