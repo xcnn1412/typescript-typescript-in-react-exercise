@@ -6,9 +6,9 @@ function App() {
     <Router>
       <Routes>
         // TODO3: เพิ่ม Route ไป Home ตรงนี้
-        <Route path="/" element={} />
+        <Route path="/" element={<Home name="Guest"/>} />
         // TODO4: เพิ่ม Route ไป UsersList ตรงนี้
-        <Route path="/users" element={} />
+        <Route path="/users" element={<UsersList />} />
       </Routes>
     </Router>
   );
